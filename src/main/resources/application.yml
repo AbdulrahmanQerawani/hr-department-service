@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: department-service
+  profiles:
+    active: dev
+  config:
+    import: configserver:http://configserver:8071
+
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.infinity: DEBUG
+
