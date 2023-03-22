@@ -22,7 +22,6 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class DepartmentServiceImpl implements DepartmentService {
     private static final Logger LOGGER = log;
-
     private final DepartmentRepository departmentRepository;
     private final StreamBridge streamBridge;
     @Value("${spring.cloud.stream.source}")
@@ -31,7 +30,6 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public List<Department> findAll() {
-        LOGGER.info("find all departments");
         List<Department> departmentList = departmentRepository.findAll();
         if (departmentList.isEmpty()) {
             LOGGER.info("No departments found");

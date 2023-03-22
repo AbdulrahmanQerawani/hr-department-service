@@ -1,8 +1,5 @@
 package com.infinity.department.utils;
 
-import io.opentelemetry.api.trace.Span;
-import io.opentelemetry.api.trace.Tracer;
-import io.opentelemetry.context.Context;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -11,8 +8,6 @@ import org.slf4j.Logger;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-
-import static io.opentelemetry.context.Context.current;
 
 @Component
 @RequiredArgsConstructor

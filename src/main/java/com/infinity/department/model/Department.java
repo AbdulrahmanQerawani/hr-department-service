@@ -13,8 +13,8 @@ import java.util.List;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @EqualsAndHashCode
+@NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 @Entity
 @Table(name = "department")

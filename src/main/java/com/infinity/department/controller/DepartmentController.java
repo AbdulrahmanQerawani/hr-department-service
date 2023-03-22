@@ -1,9 +1,11 @@
 package com.infinity.department.controller;
 
+import com.infinity.department.client.EmployeeClient;
 import com.infinity.department.client.GatewayClientService;
 import com.infinity.department.model.Department;
 import com.infinity.department.model.Employee;
 import com.infinity.department.service.DepartmentService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.springframework.web.bind.annotation.*;
@@ -12,20 +14,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@RequiredArgsConstructor
 @Slf4j
 public class DepartmentController {
 
     private static final Logger LOGGER = log;
 
     private final DepartmentService departmentService;
-//    private final EmployeeClient employeeClient;
-
+    private EmployeeClient employeeClient;
     private final GatewayClientService clientService;
-
-    public DepartmentController(DepartmentService departmentService, GatewayClientService clientService) {
-        this.departmentService = departmentService;
-        this.clientService = clientService;
-    }
 
     @GetMapping("/")
     public List<Department> findAll() {
